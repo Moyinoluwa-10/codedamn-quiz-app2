@@ -1,0 +1,75 @@
+.highscores .main {
+    width: 470px;
+    min-height: 300px;
+    max-width: 90%;
+    margin: 100px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 80px 70px 80px;
+    border-radius: 30px;
+    border: 2px solid #c1c1c1;
+    box-shadow: 14px 7px 5px 0 rgba(192, 185, 185, 0.6);
+}
+
+.highscores h2 {
+    font-size: 35px;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.highscores li {
+    font-size: 22.4px;
+    margin: 10px 0;
+}
+
+.highscores .buttonBox {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.highscores button {
+    background-color: #218380;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    border-radius: 10px;
+    padding: 18px 15px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.highscores button:hover {
+    background-color: #2cb6b1;
+}
+
+.highscores button:active {
+    transform: scale(0.98);
+}
+
+
+
+/* Responsiveness */
+@media screen and (max-width: 600px) {
+
+    .highscores .main {
+        width: 350px;
+        padding: 40px 20px;
+    }
+
+    .highscores h2 {
+        font-size: 25px;
+    }
+
+    .highscores button {
+        padding: 15px 12px;
+        font-size: 16px;
+    }
+
+}
