@@ -8,8 +8,8 @@ const Startcard = () => {
     <div className="startcard">
       <Header />
       <div className="box">
-        <div class="card">
-          <div class="card-container">
+        <div className="card">
+          <div className="card-container">
             <h2>Coding Quiz Challenge</h2>
             <p>
               Try to answer the following code related questions within the time
@@ -20,7 +20,7 @@ const Startcard = () => {
               by ten seconds!
             </p>
             <Link to={"/questions"}>
-              <button type="button" class="btn">
+              <button type="button" className="btn">
                 Start Quiz
               </button>
             </Link>

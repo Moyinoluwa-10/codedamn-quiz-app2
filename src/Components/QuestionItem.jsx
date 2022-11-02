@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./QuestionItem.css";
 import data from "./data";
+import { Link } from "react-router-dom";
 
 const QuestionItem = () => {
   const [isCorrect, setIsCorrect] = useState("");
@@ -39,7 +40,9 @@ const QuestionItem = () => {
                 <label htmlFor="intials">Enter Initials:</label>
                 <input type="text" name="initials" />
               </div>
-              <button type="submit">Submit</button>
+              <button type="submit">
+                <Link to="/">Submit</Link>
+              </button>
             </form>
           </div>
         </div>

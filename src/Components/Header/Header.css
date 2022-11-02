@@ -1,4 +1,8 @@
+header.header{
+    width: 100%;
+}
 .header .container {
+    width: 100%;
     background-color: #218380;
     color: #FFFFFF;
     padding: 22px 70px 22px 30px;
