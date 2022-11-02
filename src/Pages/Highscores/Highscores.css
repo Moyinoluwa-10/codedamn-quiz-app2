@@ -15,10 +15,12 @@
 .highscores h2 {
     font-size: 35px;
     font-weight: 900;
+    margin-bottom: 20px;
 }
 
 .highscores li {
     font-size: 22.4px;
+    margin: 10px 0;
 }
 
 .highscores .buttonBox {

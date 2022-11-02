@@ -9,7 +9,7 @@ const Highscores = () => {
   useEffect(() => {
     const highscores = JSON.parse(localStorage.getItem("highscores"));
     setData(highscores);
-  }, [data]);
+  }, []);
 
   const list = data?.map((item, key) => {
     return (
@@ -21,6 +21,7 @@ const Highscores = () => {
 
   const handleDelete = () => {
     localStorage.clear();
+    window.location.reload();
   };
 
   return (

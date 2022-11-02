@@ -1,0 +1,83 @@
+.scoresheet .box {
+    width: 550px;
+    max-width: 90%;
+    min-height: 300px;
+    padding: 60px 80px 60px 50px;
+    border-radius: 30px;
+    border: 2px solid #c1c1c1;
+    box-shadow: 14px 7px 5px 0 rgba(192, 185, 185, 0.6);
+    margin: 100px auto;
+}
+
+.scoresheet h2 {
+    font-size: 34px;
+    margin-bottom: 25px;
+}
+
+.scoresheet.p {
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.scoresheet .bottom {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.scoresheet input {
+    height: 40px;
+    width: 130px;
+    padding: 10px;
+    border: 2px solid rgb(185, 185, 185);
+    border-radius: 5px;
+    outline: none;
+    font-family: inherit;
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.scoresheet button {
+    width: 90px;
+    height: 45px;
+    color: white;
+    background-color: #218380;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+
+/* Responsiveness */
+@media screen and (max-width:600px) {
+
+    .scoresheet .container {
+        width: 400px;
+        padding: 30px 40px 50px 40px;
+    }
+
+    .scoresheet h2 {
+        font-size: 25px;
+    }
+
+    .scoresheet .bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .scoresheet input {
+        height: 40px;
+        width: 130px;
+    }
+
+    .scoresheet button {
+        width: 90px;
+        height: 45px;
+    }
+
+}
