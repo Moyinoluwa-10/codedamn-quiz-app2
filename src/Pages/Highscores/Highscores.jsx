@@ -6,18 +6,19 @@ import { Link } from "react-router-dom";
 const Highscores = () => {
   const [data, setData] = useState([]);
 
+  // window.location.reload();
   useEffect(() => {
     const highscores = JSON.parse(localStorage.getItem("highscores"));
     setData(highscores);
   }, []);
 
-  const list = data?.map((item, key) => {
-    return (
-      <li key={key}>
-        {item.name} - {item.score}
-      </li>
-    );
-  });
+  // const list = data?.map((item, key) => {
+  //   return (
+  //     <li key={key}>
+  //       {item.name} - {item.score}
+  //     </li>
+  //   );
+  // });
 
   const handleDelete = () => {
     localStorage.clear();
@@ -30,7 +31,7 @@ const Highscores = () => {
       <div className="main">
         <section className="one">
           <h2>Highscores</h2>
-          <ol id="highscores-list">{list}</ol>
+          {/* <ol id="highscores-list">{list}</ol> */}
 
           <div className="buttonBox">
             <Link to={"/"}>

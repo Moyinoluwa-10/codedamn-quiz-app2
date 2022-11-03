@@ -1,11 +1,10 @@
 import React from "react";
-import "./Header.css";
 import { Link } from "react-router-dom";
+import './Header.css'
 
-const Header = () => {
+const Header = ({timeleft}) => {
   return (
     <header className="header">
-      <div className="container">
         <div className="left">
           <p>
             <Link to={"/highscores"} id="leaderboard">
@@ -14,9 +13,8 @@ const Header = () => {
           </p>
         </div>
         <div className="right">
-          <p>Time: </p>
+          <p>Time:{timeleft} </p>
         </div>
-      </div>
     </header>
   );
 };

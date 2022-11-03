@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Startcard.css";
 import { Link } from "react-router-dom";
 import Header from "../../Components/Header/Header";
 
-const Startcard = () => {
+const Startcard = ({ setQuizInprogress,  }) => {
+
+  const handleStartQuiz = () => {
+    setQuizInprogress(true);
+  };
+  useEffect(() => {
+    handleStartQuiz();
+  }, []);
+
   return (
     <div className="startcard">
       <Header />
@@ -20,7 +28,7 @@ const Startcard = () => {
               by ten seconds!
             </p>
             <Link to={"/questions"}>
-              <button type="button" className="btn">
+              <button onClick={handleStartQuiz} type="button" className="btn">
                 Start Quiz
               </button>
             </Link>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Questions from "./Pages/Questions/Questions";
@@ -7,12 +7,21 @@ import Startcard from "./Pages/Startcard/Startcard";
 import Highscores from "./Pages/Highscores/Highscores";
 
 function App() {
+  const [score, setScore] = useState(0);
+  const [quizInprogress, setQuizInprogress] = useState(false);
+
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Startcard />} />
-        <Route path="/questions" element={<Questions />} />
-        <Route path="/scoresheet" element={<Scoresheet />} />
+        <Route
+          path="/"
+          element={<Startcard quizInprogress={quizInprogress} setQuizInprogress={setQuizInprogress} />}
+        />
+        <Route
+          path="/questions"
+          element={<Questions score={score} setScore={setScore} />}
+        />
+        <Route path="/scoresheet" element={<Scoresheet score={score} />} />
         <Route path="/highscores" element={<Highscores />} />
       </Routes>
     </Router>
@@ -20,4 +29,3 @@ function App() {
 }
 
 export default App;
-
