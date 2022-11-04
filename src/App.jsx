@@ -7,6 +7,8 @@ import Startcard from "./Pages/Startcard/Startcard";
 import Highscores from "./Pages/Highscores/Highscores";
 
 function App() {
+  const [name, setName] = useState("");
+  const [highscores, setHighscores] = useState([]);
   const [score, setScore] = useState(0);
   const [quizInprogress, setQuizInprogress] = useState(false);
 
@@ -32,8 +34,22 @@ function App() {
             />
           }
         />
-        <Route path="/scoresheet" element={<Scoresheet score={score} />} />
-        <Route path="/highscores" element={<Highscores />} />
+        <Route
+          path="/scoresheet"
+          element={
+            <Scoresheet
+              score={score}
+              name={name}
+              highscores={highscores}
+              setName={setName}
+              setHighscores={setHighscores}
+            />
+          }
+        />
+        <Route
+          path="/highscores"
+          element={<Highscores score={score} setScore={setScore} />}
+        />
       </Routes>
     </Router>
   );

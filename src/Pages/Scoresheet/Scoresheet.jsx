@@ -4,35 +4,31 @@ import Header from "../../Components/Header/Header";
 import { useNavigate } from "react-router-dom";
 import data from "../../Components/data";
 
-const Scoresheet = ({ score }) => {
-  // const [score, setScore] = useState("");
-  const [name, setName] = useState("");
-  const [highscores, setHighscores] = useState("");
-
+const Scoresheet = ({ score, name, highscores, setName, setHighscores }) => {
   const nameRef = useRef();
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   const personScore = JSON.parse(localStorage.getItem("score"));
-  //   setScore(personScore);
-  //   const highscores = JSON.parse(localStorage.getItem("highscores")) || [];
-  //   setHighscores(highscores);
-  // }, []);
+  useEffect(() => {
+    // const personScore = JSON.parse(localStorage.getItem("score"));
+    // setScore(personScore);
+    const highscores = JSON.parse(localStorage.getItem("highscores")) || [];
+    setHighscores(highscores);
+  }, []);
 
   const handleChange = () => {
     setName(nameRef.current.value);
   };
-
+  const scorePercentage = `${(score / data.length) * 100}%`;
   const handleSubmit = (e) => {
     e.preventDefault();
     const name = nameRef.current.value;
     const scores = {
       name: name,
-      score: score,
+      score: scorePercentage,
     };
-    // highscores.push(scores);
+    setHighscores(highscores.push(scores));
     localStorage.setItem("highscores", JSON.stringify(highscores));
-    // console.log(score);
+    // console.log(scores);
     navigate("/highscores");
   };
 
@@ -47,8 +43,7 @@ const Scoresheet = ({ score }) => {
 
         <div className="middle">
           <p>
-            Your final score is{" "}
-            <span id="final-score">{(score / data.length) * 100}%</span>.
+            Your final score is <span id="final-score">{scorePercentage}</span>.
           </p>
         </div>
 

@@ -36,7 +36,7 @@ const Questions = ({ score, setScore, quizInprogress }) => {
   const handleAnswerButtonClick = (e) => {
     const nextQuestion = currentQuestion + 1;
 
-    console.log(e.target.value);
+    // console.log(e.target.value);
 
     if (nextQuestion < data.length) {
       setCurrentQuestion(nextQuestion);
@@ -51,7 +51,7 @@ const Questions = ({ score, setScore, quizInprogress }) => {
       setIsCorrect(<small style={{ color: "red" }}>InCorrect</small>);
       setTimer(timer - 10);
     }
-    console.log(score);
+    // console.log(score);
   };
 
   return (
