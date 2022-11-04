@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import './Header.css'
 
-const Header = ({timeleft}) => {
+const Header = ({timer}) => {
   return (
     <header className="header">
         <div className="left">
@@ -13,7 +13,7 @@ const Header = ({timeleft}) => {
           </p>
         </div>
         <div className="right">
-          <p>Time:{timeleft} </p>
+          <p>Time:{timer} </p>
         </div>
     </header>
   );

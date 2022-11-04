@@ -1,29 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import data from "../../Components/data";
 import Header from "../../Components/Header/Header";
 import "./Questions.css";
 
 const Questions = ({ score, setScore, quizInprogress }) => {
-  const [timeleft, setTimeleft] = useState(50);
-  const [timeUpdate, settimeUpdate] = useState()
+  const [timer, setTimer] = useState(50);
+
+  const intervalRef = useRef();
+  intervalRef.current = timer;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (intervalRef.current <= 0) {
+        clearInterval(interval);
+        navigate("/scoresheet");
+        quizInprogress == false;
+      } else if (quizInprogress == true) {
+        setTimer((intervalRef) => intervalRef - 1);
+        // console.log(intervalRef);
+      }
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
   const [isCorrect, setIsCorrect] = useState("");
 
-
-
   const navigate = useNavigate();
-  const updateTime = () => {
-    if (quizInprogress === true) {
-      setTimeleft((timeleft =timeleft- 1));
-      console.log(timeleft);
-    } else if (timeleft <= 0) {
-      clearInterval(timeInterval)
-      navigate("/scoresheet");
-    }
-  };
-  const timeInterval = setInterval(updateTime, 1000);
 
   const handleAnswerButtonClick = (e) => {
     const nextQuestion = currentQuestion + 1;
@@ -41,15 +49,14 @@ const Questions = ({ score, setScore, quizInprogress }) => {
       setIsCorrect(<small style={{ color: "green" }}>Correct </small>);
     } else {
       setIsCorrect(<small style={{ color: "red" }}>InCorrect</small>);
+      setTimer(timer - 10);
     }
     console.log(score);
   };
-  console.log(updateTime);
-  console.log(timeleft);;
 
   return (
     <>
-      <Header timeleft={timeleft} updateTime={updateTime} />
+      <Header timer={timer} />
 
       <div className="questionItem">
         <div className="container">

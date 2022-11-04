@@ -3,14 +3,11 @@ import "./Startcard.css";
 import { Link } from "react-router-dom";
 import Header from "../../Components/Header/Header";
 
-const Startcard = ({ setQuizInprogress,  }) => {
+const Startcard = ({ setQuizInprogress  }) => {
 
   const handleStartQuiz = () => {
     setQuizInprogress(true);
   };
-  useEffect(() => {
-    handleStartQuiz();
-  }, []);
 
   return (
     <div className="startcard">

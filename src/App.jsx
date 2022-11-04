@@ -15,11 +15,22 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Startcard quizInprogress={quizInprogress} setQuizInprogress={setQuizInprogress} />}
+          element={
+            <Startcard
+              quizInprogress={quizInprogress}
+              setQuizInprogress={setQuizInprogress}
+            />
+          }
         />
         <Route
           path="/questions"
-          element={<Questions score={score} setScore={setScore} />}
+          element={
+            <Questions
+              score={score}
+              setScore={setScore}
+              quizInprogress={quizInprogress}
+            />
+          }
         />
         <Route path="/scoresheet" element={<Scoresheet score={score} />} />
         <Route path="/highscores" element={<Highscores />} />
