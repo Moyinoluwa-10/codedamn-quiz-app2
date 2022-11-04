@@ -3,7 +3,8 @@ import "./Highscores.css";
 import Header from "../../Components/Header/Header";
 import { Link } from "react-router-dom";
 
-const Highscores = () => {
+const Highscores = ({ score, setScore }) => {
+  setScore((score = 0));
   const [data, setData] = useState([]);
 
   useEffect(() => {

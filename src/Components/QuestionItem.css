@@ -39,10 +39,25 @@
   justify-content: flex-start;
   align-items: center;
 }
-.scoresheet .container .initialsSubmit button {
-  background-color: #218380;
-  border: none;
+/* .scoresheet .container .initialsSubmit button {
   padding: 8px;
   border-radius: 5px;
   color: white;
+} */
+.scoresheet .container .initialsSubmit button a {
+  border: none;
+  background-color: #218380;
+  text-decoration: none;
+  padding: 8px;
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .scoresheet .container .initialsSubmit {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
